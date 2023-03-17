@@ -1,5 +1,7 @@
 package Ex;
 
+import java.util.Scanner;
+
 public class Ex04 {
 	
 	public static void main(String[] args) {
@@ -43,6 +45,44 @@ public class Ex04 {
 			}
 		}
 		
+		//5번
+		System.out.println("5번===============");
+		
+		boolean run = true;
+		int balance = 0;
+		Scanner sc = new Scanner(System.in);
+		int M = 0; //잔고
+		int money;//금액
+		
+		while(run) {
+			System.out.println("---------------------------------");
+			System.out.println("1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료");
+			System.out.println("---------------------------------");
+			System.out.println("선택>");
+			
+			String c = sc.nextLine();//선택
+			
+			switch(c) {
+			case "1" :
+				System.out.println("예금액");
+				money =sc.nextInt();
+				M += money;
+			
+			case "2" :
+				System.out.println("출금액");
+				money =sc.nextInt();
+				M -= money;
+				
+			case "3":
+				System.out.println("잔고");
+				System.out.println(M);
+				
+			case "4" :
+				break;
+			}
+			
+			
+		}
 		
 		
 		

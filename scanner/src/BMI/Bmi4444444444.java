@@ -42,6 +42,7 @@ public class Bmi4444444444 {
 				if("q".equals(str))
 				{
 					System.out.println("종료합니다");
+					System.out.println("========================");
 					//반복문 탈출
 					break;
 				}

@@ -48,6 +48,41 @@ public interface StarEx_fal {
 			System.out.println();
 			
 		}
+		System.out.println("4번================");
+		
+		for(int i=0; i<=3; i++) {
+			
+			for(int j=0; j<i; j++) {
+				System.out.print("^");
+			}
+			for(int j=7; j>=(i*2)+1; j--) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		
+		
+		
+		
+		
+		System.out.println("5번================");
+		
+		for(int i=0; i<=3; i++) {
+			
+			for(int j=3; j>i; j--) { 
+				System.out.print("*");
+			}
+			for(int j=0; j<(i*2)+1; j++) {
+				System.out.print("^");
+			}
+			
+			System.out.println();
+			
+		}
+		
+		
+		
+		
 		
 	}
 	

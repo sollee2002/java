@@ -24,12 +24,12 @@ public class Ex04 {
 			int num2 = (int)(Math.random()*6)+1;		
 			
 			System.out.printf("%d, %d\n",num1,num2);
-			System.out.println("다시 굴립니다");
 			
 			if(num1+num2==5) {
-				System.out.println("주사위 눈의 합이 5 종료합니다");
+				System.out.println("주사위 눈의 합이 5, 종료합니다");
 				break;
 			}
+			System.out.println("다시 굴립니다");
 		}
 		
 		//4번
@@ -49,42 +49,44 @@ public class Ex04 {
 		System.out.println("5번===============");
 		
 		boolean run = true;
-		int balance = 0;
 		Scanner sc = new Scanner(System.in);
-		int M = 0; //잔고
+		int balance = 0;//잔고
 		int money;//금액
 		
 		while(run) {
+			
 			System.out.println("---------------------------------");
 			System.out.println("1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료");
 			System.out.println("---------------------------------");
 			System.out.println("선택>");
 			
-			String c = sc.nextLine();//선택
+			String c = sc.next();//선택
 			
-			switch(c) {
-			case "1" :
-				System.out.println("예금액");
-				money =sc.nextInt();
-				M += money;
-			
-			case "2" :
-				System.out.println("출금액");
-				money =sc.nextInt();
-				M -= money;
-				
-			case "3":
-				System.out.println("잔고");
-				System.out.println(M);
-				
-			case "4" :
-				break;
-			}
-			
-			
+				if("1".equals(c)) {
+					System.out.println("예금액>");
+					money =sc.nextInt();
+					balance += money;
+					System.out.printf("잔액 : %d(원)\n",balance);
+				} else if ("2".equals(c)) {
+					System.out.println("출금액>");
+					money =sc.nextInt();
+					
+					if(balance<money){
+						System.out.println("잔액이 부족합니다");
+					} else {
+						balance -= money;	
+						System.out.printf("잔액 : %d(원)\n",balance);
+					}
+					
+				} else if ("3".equals(c)) {
+					System.out.println("잔고>");
+					System.out.println(balance+"(원)");	
+					
+				} else if("4".equals(c)) {
+					break;
+				}			
 		}
-		
-		
+		System.out.println("종료합니다");
 		
 	}
 }

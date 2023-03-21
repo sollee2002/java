@@ -1,66 +1,79 @@
-package arrayEx;
+package arrayEx_Home;
 
 import java.util.Scanner;
 
-public class ArrayEx16 {
-
+public class ArrayEx02_home {
+	
 	public static void main(String[] args) {
-		//점수 입력받아 최고점수와 평균점수 구하기
 		
 		boolean run = true;
 		int studentNum = 0;
 		int[] scores = null;
-		int num = 0;
+		int sum = 0;
+		int max = 0;
 		Scanner sc = new Scanner(System.in);
 		
 		while(run) {
+			
 			System.out.println("===================================================");
 			System.out.println("1. 학생수 | 2. 점수입력 | 3. 점수리스트 | 4. 분석 | 5. 종료");
 			System.out.println("===================================================");
 			System.out.println("선택> ");
 			
-			int selectNo = Integer.parseInt(sc.next());
+			int selectNum = Integer.parseInt(sc.next());
 			
-			if(selectNo==1) {
+			switch (selectNum) {
+			case 1:
 				System.out.println("학생수를 입력하세요");
 				studentNum = sc.nextInt();
-				scores = new int[studentNum];
-			} else if(selectNo==2) {
+				scores = new int [studentNum];//학생수만큼의 배열길이 생성
+				break;
+				
+			case 2:
 				System.out.println("점수를 입력하세요");
 				for(int i=0; i<scores.length; i++) {
-					scores[i]=Integer.parseInt(sc.next()); //
-					System.out.printf("scores[%d]> %d\n",i,scores[i]);
-					
-					num += scores[i]; //
+					System.out.printf("scores[%d]> ",i);
+			
+					scores[i]=sc.nextInt(); //학생인덱스에 입력한 점수 저장
+					sum += scores[i]; //총합에 점수 저장
 				}
-			} else if(selectNo==3) {
+				break;
+
+			case 3:
 				System.out.println("=====점수리스트=====");
 				for(int i=0; i<scores.length; i++) {
 					System.out.printf("scores[%d]> %d\n",i,scores[i]);
 				}
-			} else if(selectNo==4) {
+				break;
 				
-				int max=0;
+			case 4:
+				
 				for(int i=0; i<scores.length; i++) {
-					if(max<scores[i]) {
-						max=scores[i];
+					if(max<scores[i]) { //최고점보다 인덱스의 값이 클 경우
+						max = scores[i];//인덱스 값으로 max 대체
 					}
 				}
 				
 				System.out.println("최고 점수: "+max);
-				System.out.printf("평균 점수: %.1f\n",(double)num/scores.length);
+				System.out.printf("평균 점수: %.1f\n",(double)sum/scores.length);
+				break;
 				
-			} else if(selectNo==5) {
-				run=false;
+			case 5:
+				System.out.println("종료합니다");
+				run = false;
+				break;
 			}
 			
 			
 			
 			
 			
+			
+			
+			
 		}
-		System.out.println("프로그램 종료");
-
+		
 	}
+	
 
 }

@@ -4,6 +4,8 @@ public class BoardMain {
 
 	public static void main(String[] args) {
 		
+		//ctrl+shift+r 리소스 찾기
+		
 		//게시글 생성
 		Board b1 = new Board("게시글1", "어려워요1","작성자1","23-03-22-1",11);
 		Board b2 = new Board("게시글2", "어려워요2","작성자2","23-03-22-2",12);

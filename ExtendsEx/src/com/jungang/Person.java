@@ -1,9 +1,6 @@
 package com.jungang;
 
-import java.util.Scanner;
-
 public class Person {
-	Scanner sc = new Scanner(System.in);
 	
 	protected String name;
 	private int age;
@@ -21,11 +18,12 @@ public class Person {
 	}
 	
 	public String information() {
-		name=sc.next();
-		age=sc.nextInt();
-		height=sc.nextDouble();
-		weight=sc.nextDouble();
-//		System.out.println(name+" "+age+" "+height+" "+weight);
+		
+		System.out.println("=====================");
+		System.out.println("이름: "+name);
+		System.out.println("나이: "+age+"살");
+		System.out.println("신장: "+height+"(cm)");
+		System.out.println("몸무게: "+weight+"(kg)");
 		return "";
 	}
 

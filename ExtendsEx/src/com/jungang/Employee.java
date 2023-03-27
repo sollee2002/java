@@ -18,7 +18,10 @@ public class Employee extends Person {
 
 	@Override
 	public String information() {
-		return super.information();
+		super.information();
+		System.out.println("급여: "+salary+"원");
+		System.out.println("부서: "+dept);
+		return "";
 	}
 	
 	

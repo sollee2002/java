@@ -20,11 +20,27 @@ public class Person {
 	public String information() {
 		
 		System.out.println("=====================");
-		System.out.println("이름: "+name);
-		System.out.println("나이: "+age+"살");
-		System.out.println("신장: "+height+"(cm)");
-		System.out.println("몸무게: "+weight+"(kg)");
+		System.out.println("이름: "+getName());
+		System.out.println("나이: "+getAge()+"살");
+		System.out.println("신장: "+getHeight()+"(cm)");
+		System.out.println("몸무게: "+getWeight()+"(kg)");
 		return "";
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public double getHeight() {
+		return height;
+	}
+
+	public double getWeight() {
+		return weight;
 	}
 
 }

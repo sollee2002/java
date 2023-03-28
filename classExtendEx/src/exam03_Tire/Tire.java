@@ -2,7 +2,9 @@ package exam03_Tire;
 
 public class Tire {
 
+	//타이어 객체가 생성될 때 매개변수에 의해 초기화
 	public int maxRotation; //최대회전수
+
 	public int Rotaion; //누적회전수
 	public String location;//타이어의 위치
 	
@@ -21,7 +23,9 @@ public class Tire {
 	public boolean roll() {
 
 			Rotaion++; //타이어회전 1증가
-			if(Rotaion>maxRotation) { //누적회전수가 최대회전수보다 크면
+			System.out.println(location+"누적 회전수: "+Rotaion);
+			System.out.println(location+"최대 회전수: "+maxRotation);
+			if(Rotaion>=maxRotation) { //누적회전수가 최대회전수보다 크면
 				System.out.println("타이어를 교체하세요"); //교체알림
 				return false;			
 			}

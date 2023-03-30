@@ -1,2 +1,4 @@
 module ExceptionEx {
+	requires lombok;
 }
+

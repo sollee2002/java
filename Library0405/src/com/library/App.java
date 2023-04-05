@@ -42,25 +42,42 @@ public class App {
 					switch(menu) {
 					//책 등록
 					case 1 :
-						System.out.println("====신규 도서를 등록합니다====");
-						System.out.print("일련번호> ");
-						no = app.getInt();
-						System.out.print("도서명> ");
-						String title = app.getString();
-						System.out.print("저자명> ");
-						String author = app.getString();
 						
-						lib.insertBook(no, title, author, false);
+						System.out.println("====신규 도서를 등록합니다====");
+						while(true) {
+							System.out.println("뒤로가기 b, 계속하려면 아무키나");
+							if(app.getString().equalsIgnoreCase("b")) {
+								break;
+								
+							} else {
+								System.out.print("일련번호> ");
+								no = app.getInt();
+								System.out.print("도서명> ");
+								String title = app.getString();
+								System.out.print("저자명> ");
+								String author = app.getString();
+								
+								lib.insertBook(no, title, author, false);								
+							}
+						}
 						
 						break;
 					//책 삭제
 					case 2 :
 						System.out.println("====도서를 삭제합니다====");
-						System.out.print("일련번호> ");
-						no = app.getInt();
-					
-						lib.deleteBook(no);
 						
+						while(true) {
+							System.out.println("뒤로가기 b, 계속하려면 아무키나");
+							if(app.getString().equalsIgnoreCase("b")) {
+								break;
+							
+							} else {
+								System.out.print("일련번호> ");
+								no = app.getInt();
+					
+								lib.deleteBook(no);
+							}
+						}
 						break;
 						
 					case 3 :
@@ -90,21 +107,38 @@ public class App {
 					//책 대여
 					case 1 :
 						System.out.println("<대여>========");
-						System.out.println(lib.toString());
-						System.out.print("일련번호> ");
-						no = app.getInt();
+						while(true) {
+							System.out.println("뒤로가기 b, 계속하려면 아무키나");
+							if(app.getString().equalsIgnoreCase("b")) {
+								break;
+								
+							} else {
+								System.out.println(lib.toString());
+								System.out.print("일련번호> ");
+								no = app.getInt();
 						
-						lib.rentBook(no);
+								lib.rentBook(no);
+							}
+						}
 						
 						break;
 					//책 반납
 					case 2 :
 						System.out.println("<반납>========");
-						System.out.println(lib.toString());
-						System.out.print("일련번호> ");
-						no = app.getInt();
 						
-						lib.returnBook(no);
+						while(true) {
+							System.out.println("뒤로가기 b, 계속하려면 아무키나");
+							if(app.getString().equalsIgnoreCase("b")) {
+								break;
+								
+							} else {
+								System.out.println(lib.toString());
+								System.out.print("일련번호> ");
+								no = app.getInt();
+						
+								lib.returnBook(no);
+							}
+						}
 						
 						break;
 						

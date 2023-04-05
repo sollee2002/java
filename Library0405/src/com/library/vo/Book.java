@@ -1,7 +1,9 @@
 package com.library.vo;
 
 //vo 데이터 정보 저장
-public class Book {
+public class Book implements Comparable<Book>
+
+{
 	
 	private int no; //일련번호
 	private String title; //제목
@@ -71,6 +73,14 @@ public class Book {
 	public void setRent(boolean isRent) {
 		this.isRent = isRent;
 	}
-	
+
+	@Override
+	public int compareTo(Book o) {
+		if(this.no>o.getNo()) {
+			return 1;
+		} else {
+			return -1;			
+		}
+	}
 
 }

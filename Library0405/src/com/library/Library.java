@@ -1,5 +1,6 @@
 package com.library;
 
+import java.util.Collections;
 import java.util.List;
 
 import com.library.dao.Dao;
@@ -30,6 +31,10 @@ public class Library {
 	public String toString() {
 		System.out.println("=====책 목록=====");
 		String info = "";
+		
+		//정렬
+		Collections.sort(list);
+		
 		for(Book book : list) {
 			info += book.info()+"\n";
 		}		

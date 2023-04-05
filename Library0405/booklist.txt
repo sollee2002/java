@@ -1,0 +1,4 @@
+1 불편한편의점 나가사키 false
+2 불편한 나가 false
+3 편의점 사키 false
+4 asd awqe true

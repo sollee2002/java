@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 
 import com.library.dao.Dao;
+import com.library.dao.DatabaseDao;
 import com.library.dao.FileDao;
 import com.library.vo.Book;
 //ctrl+h = 파일 찾기
@@ -24,6 +25,14 @@ public class Library {
 		//필드를 초기화시킴
 		list = dao.getList();
 		System.out.print(toString()); //같은 파일 내 메소드는 그냥 선언 가능
+	}
+
+	public Library(String daoType) {
+		if(daoType.equals("DB")) {
+			dao = new DatabaseDao();
+		}
+		list = dao.getList();
+		System.out.print(toString());
 	}
 	
 	//책 리스트 출력
@@ -127,6 +136,16 @@ public class Library {
 					
 					//리스트를 파일로 출력
 					boolean res = dao.listToFile(list);
+					//데이터베이스 업데이트
+					int i = dao.update(no);
+					if(i>0) {
+						System.out.println(i+"건 처리되었습니다");
+					} else {
+						System.out.println("처리 도중 오류가 발생했습니다");
+						book.setRent(false);
+					}
+					
+					
 					if(!res) {
 						book.setRent(false);
 						System.err.println("오류가 발생했습니다");	
@@ -164,6 +183,11 @@ public class Library {
 					
 					//리스트를 파일로 출력
 					boolean res = dao.listToFile(list);
+					
+					//DB 업데이트 로직 호출
+					dao.update(no);
+					System.out.println("반납되었습니다");
+					System.out.println(toString());
 					
 					if(!res) {
 						book.setRent(true);

@@ -14,7 +14,7 @@ public class App {
 		App app = new App();
 		
 		//라이브러리 생성
-		Library lib = new Library();
+		Library lib = new Library("DB");
 		
 		//자주 사용하는 로직은 메서드로 빼서 만들면 코드가 간결해집니다
 		//스캐너로부터 입력을 받아서 리턴해주는 역할

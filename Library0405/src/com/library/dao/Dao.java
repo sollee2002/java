@@ -12,6 +12,8 @@ public interface Dao {
 	//리스트를 파일로 출력합니다
 	public boolean listToFile(List<Book> list);
 	
-	
+	public int delete(int no);
+	public int update(int no);
+	public Book insert(Book book);
 
 }

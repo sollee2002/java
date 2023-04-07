@@ -146,11 +146,11 @@ public class Library {
 					}
 					
 					
-					if(!res) {
-						book.setRent(false);
-						System.err.println("오류가 발생했습니다");	
-						return false;
-					}
+//					if(!res) {
+//						book.setRent(false);
+//						System.err.println("오류가 발생했습니다");	
+//						return false;
+//					}
 					System.out.println("대여완료");
 					System.out.println(toString());
 					return true;

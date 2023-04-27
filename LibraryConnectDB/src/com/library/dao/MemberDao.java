@@ -26,10 +26,10 @@ public class MemberDao {
 			ResultSet rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				String name = rs.getString("name");
-				String adminYN = rs.getString("adminYN");		
+				String name = rs.getString(3);
+				String adminYN = rs.getString(4);
 				
-				MemberVo memberVo = new MemberVo(id,"",name,adminYN);
+				MemberVo memberVo = new MemberVo(id,pw,name,adminYN);
 
 				return memberVo; 
 			}

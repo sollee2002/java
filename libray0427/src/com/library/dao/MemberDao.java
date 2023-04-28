@@ -4,8 +4,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.library.common.ConnectionUtil;
+import com.library.vo.Book;
 import com.library.vo.Member;
 
 public class MemberDao {
@@ -38,6 +41,38 @@ public class MemberDao {
 		}
 		return null;
 		
+	}
+	
+		public List<Member> getList() {
+		
+		List<Member> list = new ArrayList<Member>();
+		
+		String sql = "select * from member order by id";
+		
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				String id = rs.getString(1);
+				String pw = rs.getString(2);
+				String name = rs.getNString(3);
+				String rentYN = rs.getString(4);
+				String status = rs.getString(5);
+				String grade = rs.getString(6);
+				
+				Member member = new Member (id,pw,name,rentYN,status,grade);
+				
+				list.add(member);
+				
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return list;
 	}
 	
 	public int insert(Member member) {

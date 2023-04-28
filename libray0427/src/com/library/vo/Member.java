@@ -54,6 +54,13 @@ public class Member {
 		this.grade = grade;
 	}
 	
+	public Member(String id, String pw, String name, String adminyn) {
+		this.id = id;
+		this.pw = pw;
+		this.name = name;
+		this.adminyn = adminyn;
+	}
+	
 	@Override
 	public String toString() {
 		return getId()+" "+getName()+" "+getAdminyn()+" "+getStatus()+" "+getGrade();

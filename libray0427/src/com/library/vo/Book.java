@@ -47,6 +47,8 @@ public class Book {
 		this.rentyn = rentyn;
 		this.author = author;
 	}
+	public Book() {
+	}
 	@Override
 	public String toString() {
 		

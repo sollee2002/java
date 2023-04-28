@@ -2,6 +2,7 @@ package com.libray;
 
 import java.util.List;
 
+import com.library.controller.LibraryController;
 import com.library.dao.BookDao;
 import com.library.dao.MemberDao;
 import com.library.vo.Book;
@@ -11,11 +12,16 @@ public class Application {
 	
 	
 	public static void main(String[] args) {
-		
-//		BookDao dao = new BookDao();
-		MemberDao dao = new MemberDao();
 
-		System.out.println(dao.delete("USER2")+"건이 삭제되었습니다");
+//		MemberDao dao = new MemberDao();
+		BookDao dao = new BookDao();
+		LibraryController lib = new LibraryController();
+		
+
+		lib.library();
+		
+//
+//		System.out.println(dao.delete("USER2")+"건이 삭제되었습니다");
 		
 		//id 체크 테스트
 //		System.out.println(dao.idCheck("admin"));
@@ -36,7 +42,7 @@ public class Application {
 
 		//getList() 테스트
 //		List<Book> list = dao.getList();
-		
+//		
 //		for(Book book : list) {
 //			System.out.println(book.toString());
 //		}

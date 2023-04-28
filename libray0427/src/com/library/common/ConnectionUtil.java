@@ -29,8 +29,8 @@ public class ConnectionUtil {
 			//트랜젝션 처리를 위해 자동커밋을 false로 설정
 			conn.setAutoCommit(false);
 			
-			System.out.println(conn);
-			System.out.println("프로그램 종료");
+//			System.out.println(conn);
+//			System.out.println("프로그램 종료");
 			
 		} catch (ClassNotFoundException e) {
 			System.err.println("라이브러리를 찾을 수 없습니다");
